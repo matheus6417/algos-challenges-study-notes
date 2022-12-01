@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    'no-console': 'off',
     'operator-assignment': 'off',
     'no-underscore-dangle': 'off',
     'max-classes-per-file': ['error', 2],

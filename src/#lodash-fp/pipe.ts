@@ -8,4 +8,6 @@ const trace = (label: string) => (value: any) => {
 const g = (n: number) => n + 1;
 const f = (n: number) => n * 2;
 
-export const doPipe = pipe(g, trace('after g'), f, trace('after f'));
+export const doPipe = pipe(g, trace('after g'), f, trace('after f')); // ?
+
+console.log(doPipe(20));
