@@ -1,58 +1,52 @@
 // type WrapStringInArray<T> = T extends string ? Array<string> : T;
-// const sw: WrapStringInArray<string> = ['hello'];
-
-// type WrapStringInArray<T> = T extends string ? Array<string> : T;
-// const sq: WrapStringInArray<string> = 'hello';
-
-// type WrapStringInArray<T> = T extends string ? Array<string> : T;
-// const nd: WrapStringInArray<number> = 1;
+// const sw: WrapStringInArray<number> = 6;
 
 // type WrapStringsInArrays<T> = {
 //   [K in keyof T]: T[K] extends string ? Array<string> : T[K]
 // };
 
-// type User = {
+// type UserType = {
 //   name: string
 //   email: string
 //   age: number
 // };
 
-// const matheus: WrapStringsInArrays<User> = {
+// const matheus: WrapStringsInArrays<UserType> = {
 //   name: ['matheus'],
 //   email: ['matheus@example.com'],
 //   age: 28,
 // };
-// matheus.name;
+// console.log(matheus.name)
 
 // 1
-// const matheus: WrapStringsInArrays<User> = {
+// const matheus: WrapStringsInArrays<UserType> = {
 //   name: 'matheus',
 //   email: ['matheus@example.com'],
 //   age: 28,
 // };
-// matheus.name;
+// console.log(matheus.name)
 
-// const matheus: WrapStringsInArrays<User> = {
+// 2
+// const matheus: WrapStringsInArrays<UserType> = {
 //   name: ['matheus'],
 //   email: ['amir@example.com'],
 //   age: [28],
 // };
-// matheus.name;
+// console.log(matheus.name)
 
 // type ReplaceNumberPropertiesWithNull<T> = {
-//   ///
+//   [K in keyof T]: T[K] extends number ? null : T[K]
 //  };
 
-//  type User = {
+//  type UserType = {
 //    name: string
 //    age: number
 //  };
 
-//  /* We make two different MAtheus variables to make sure that the type has
+//  /* We make two different Matheus variables to make sure that the type has
 //   * exactly the property types we expect. */
-//  const amir1: ReplaceNumberPropertiesWithNull<User> = {
+//  const matheus1: ReplaceNumberPropertiesWithNull<UserType> = {
 //    name: 'Matheus',
-//    age: null,
+//    age: 123,
 //  };
 //  const matheus2: {name: string, age: null} = matheus1;
-//  matheus2;
