@@ -26,8 +26,9 @@
 // s consists of parentheses only '()[]{}'.
 
 export const isValid = (s) => {
+  //   Define a stack array to store the open brackets.
   const stack = [];
-
+  //   Iterate through each character in the string.
   const pairs = {
     ')': '(',
     ']': '[',
@@ -36,14 +37,18 @@ export const isValid = (s) => {
 
   for (const c of s) {
     if (c in pairs) {
+      // If the character is a close bracket, check if the top element of the stack is the corresponding open bracket.
+      // If it is, pop the top element from the stack. If it is not, return false.
       if (stack.pop() !== pairs[c]) {
         return false;
       }
     } else {
+      //   If the character is an open bracket, push it to the stack.
       stack.push(c);
     }
   }
 
+  //   After the iteration, if the stack is empty, return true. Otherwise, return false.
   return stack.length === 0;
 };
 
